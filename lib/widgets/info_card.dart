@@ -4,11 +4,15 @@ class InfoCard extends StatelessWidget {
 
   final String title;
   final String info;
+  final Color cardColor;
 
-  const InfoCard(this.title, this.info);
+  const InfoCard(this.title, this.info, this.cardColor);
 
   @override
   Widget build(BuildContext context) {
+
+    double _screenWidth = MediaQuery.of(context).size.width;
+
     return Card(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
@@ -19,10 +23,11 @@ class InfoCard extends StatelessWidget {
         )
       ),
       child: Container(
+        width: _screenWidth,
         padding: EdgeInsets.all(10.0),
         decoration: BoxDecoration(
           border: Border(
-            bottom: BorderSide(width: 10.0, color: Colors.lightBlue.shade900)
+            bottom: BorderSide(width: 6.0, color: cardColor)
           )
         ),
         child: Column(
@@ -30,16 +35,23 @@ class InfoCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            Text(title,
-              style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.bold
-              )),
-            Text(info,
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w600
-              ),)
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(title,
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold
+                )),
+            ),
+            SizedBox(height: 5.0),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(info,
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w600
+                ),),
+            )
           ],
         ),
       ),

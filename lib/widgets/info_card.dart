@@ -30,8 +30,16 @@ class InfoCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            Text(title),
-            Text(info)
+            Text(title,
+              style: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.bold
+              )),
+            Text(info,
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.w600
+              ),)
           ],
         ),
       ),

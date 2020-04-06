@@ -37,11 +37,25 @@ class InfoCard extends StatelessWidget {
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text(title,
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold
-                )),
+              child: Row(
+                children: <Widget>[
+                  Text(title,
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold
+                    )
+                  ),
+                  Padding(
+                    padding: EdgeInsets.only(left: 10.0),
+                    child: Row(
+                      children: <Widget>[
+                        Icon(Icons.arrow_upward, color: Colors.red, size: 15,),
+                        Text('25%')
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
             SizedBox(height: 5.0),
             Padding(

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_covid/widgets/info_card.dart';
+import 'package:charts_flutter/flutter.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -6,38 +8,25 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Dashboard'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+      body: SafeArea(
+        child: ListView(
+          shrinkWrap: true,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
-            ),
+            Padding(
+              padding: EdgeInsets.all(5.0),
+              child: InfoCard('Recent Cases', '3793', Colors.blue)),
+            Padding(
+              padding: EdgeInsets.all(5.0),
+              child: InfoCard('Recent Discharges', '236', Colors.lightGreen)),
+            Padding(
+              padding: EdgeInsets.all(5.0),
+              child: InfoCard('Recent Death', '1', Colors.red)),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
       ),
     );
   }

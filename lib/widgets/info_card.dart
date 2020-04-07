@@ -50,7 +50,7 @@ class InfoCard extends StatelessWidget {
                     child: Row(
                       children: <Widget>[
                         Icon(Icons.arrow_upward, color: Colors.red, size: 15,),
-                        Text('25%')
+                        Text('2')
                       ],
                     ),
                   )

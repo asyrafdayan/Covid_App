@@ -11,6 +11,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+
+    double _screenWidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -19,13 +22,20 @@ class _MyHomePageState extends State<MyHomePage> {
             children: <Widget>[
               Padding(
                 padding: EdgeInsets.all(5.0),
-                child: InfoCard('Recent Cases', '3793', Colors.blue)),
-              Padding(
-                padding: EdgeInsets.all(5.0),
-                child: InfoCard('Recent Discharges', '236', Colors.lightGreen)),
-              Padding(
-                padding: EdgeInsets.all(5.0),
-                child: InfoCard('Recent Death', '1', Colors.red)),
+                child: InfoCard('Recent Cases', '3793', Colors.blue, null)),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.all(5.0),
+                      child: InfoCard('Discharges', '236', Colors.lightGreen, _screenWidth / 2))),
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.all(5.0),
+                      child: InfoCard('Deaths', '1', Colors.red, _screenWidth / 2)))
+                ],
+              ),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 10.0),
                 height: 300.0,

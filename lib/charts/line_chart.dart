@@ -1,26 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
-class CovidBarChart extends StatelessWidget {
+class CovidLineChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
     return SfCartesianChart(
       primaryXAxis: CategoryAxis(),
       // Chart title
-      title: ChartTitle(text: 'Half yearly sales analysis'),
+      title: ChartTitle(text: 'Covid Infection Trend'),
       // Enable legend
-      legend: Legend(isVisible: true),
+      legend: Legend(isVisible: false),
       // Enable tooltip
       tooltipBehavior: TooltipBehavior(enable: true),
       series: <ChartSeries<SalesData, String>>[
         LineSeries<SalesData, String>(
             dataSource: <SalesData>[
-              SalesData('Jan', 35),
-              SalesData('Feb', 28),
-              SalesData('Mar', 34),
-              SalesData('Apr', 32),
-              SalesData('May', 40)
+              SalesData('05/04/2020', 3305),
+              SalesData('06/04/2020', 3400),
+              SalesData('07/04/2020', 3700)
             ],
             xValueMapper: (SalesData sales, _) => sales.year,
             yValueMapper: (SalesData sales, _) => sales.sales,

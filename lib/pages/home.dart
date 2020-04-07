@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_covid/widgets/info_card.dart';
-import 'package:my_covid/charts/bar_chart.dart';
+import 'package:my_covid/charts/line_chart.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -29,7 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 10.0),
                 height: 300.0,
-                child: CovidBarChart(),
+                child: CovidLineChart(),
               )
             ],
           ),

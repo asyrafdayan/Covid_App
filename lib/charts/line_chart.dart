@@ -18,6 +18,7 @@ class CovidLineChart extends StatelessWidget {
             dataSource: <SalesData>[
               SalesData('05/04/2020', 3305),
               SalesData('06/04/2020', 3400),
+              SalesData('07/04/2020', 3700),
               SalesData('07/04/2020', 3700)
             ],
             xValueMapper: (SalesData sales, _) => sales.year,
